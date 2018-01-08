@@ -14,5 +14,9 @@
         Task AddPost(Post post);
 
         Task RemovePost(int postId);
+
+        IEnumerable<Post> GetAllPostsByUserId(string userId);
+
+        Task UpdatePost(Post post);
     }
 }

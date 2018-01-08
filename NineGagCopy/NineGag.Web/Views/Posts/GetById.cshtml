@@ -17,7 +17,6 @@
 <div>
     <ul id="menu">
         <li><img src="~/images/buttonup.png" width="44" height="34" /></li>
-        <li><img src="~/images/buttondown.png" width="44" height="34" /></li>
     </ul>
 </div>
 @if (Model.Picture != null)
@@ -74,13 +73,12 @@ else if (Model.Url != null)
 
             }
             <div>
-                <p>@item.User.UserName @item.CommentUpvotes.Count points · @item.CommentedOn.ToShortDateString()</p>
+                <p><a href="/users/@item.UserId">@item.User.UserName</a> @item.CommentUpvotes.Count points · @item.CommentedOn.ToShortDateString()</p>
             </div>
             <p>@item.Content</p>
             <div>
                 <a>Reply</a>
                 <a><img src="~/images/buttonup.png" width="20" height="20" /></a>
-                <a><img src="~/images/buttondown.png" width="20" height="20" /></a>
                 @{var visibility = (User.GetUserId() != item.UserId ? "block" : null); }
                 <a href="/comments/remove/@item.Id" style="display: @visibility">Delete Comment</a>
             </div>
@@ -107,7 +105,6 @@ else if (Model.Url != null)
                     <div>
                         <a>Reply</a>
                         <a><img src="~/images/buttonup.png" width="20" height="20" /></a>
-                        <a><img src="~/images/buttondown.png" width="20" height="20" /></a>
                     </div>
                 </div>
             }

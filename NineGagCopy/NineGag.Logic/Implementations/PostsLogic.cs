@@ -7,6 +7,7 @@
     using Services;
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
     public class PostsLogic : IPostsLogic
@@ -52,6 +53,21 @@
         public async Task RemovePost(int postId)
         {
             await this.postsService.RemovePost(postId);
+        }
+
+        public IEnumerable<PostViewModel> GetPostsByUserId(string userId)
+        {
+            var posts = this.postsService.GetAllPostsByUserId(userId).Select(p => Mapper.Map<Post, PostViewModel>(p));
+
+            return posts;
+        }
+
+        public async Task UpvotePost(int postId, string userId)
+        {
+            var post = await this.postsService.GetById(postId);
+
+            post.PostUpvotes.Add(new PostUpvote() { UserId = userId, UpvotedOn = DateTime.Now });
+            await this.postsService.UpdatePost(post);
         }
     }
 }

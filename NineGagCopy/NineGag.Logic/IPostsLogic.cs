@@ -14,5 +14,9 @@
         Task AddPost(PostBindingModel post, string userId);
 
         Task RemovePost(int postId);
+
+        IEnumerable<PostViewModel> GetPostsByUserId(string userId);
+
+        Task UpvotePost(int postId, string userId);
     }
 }

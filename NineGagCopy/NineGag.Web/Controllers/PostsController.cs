@@ -147,6 +147,25 @@
             return RedirectToAction("GetAllPosts");
         }
 
+        [Route("upvote/{n:int}")]
+        [HttpGet]
+        [Authorize]
+        public IActionResult UpvotePost(int n, int postId)
+        {
+            if (!this.User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("/account/login");
+            }
+
+            if (n > 0)
+            {
+                this.postsLogic.UpvotePost(postId, this.User.GetUserId());
+            }
+
+
+            return RedirectToAction($"/posts/fresh#{postId}");
+        }
+
         private byte[] ConvertToBytes(IFormFile image)
         {
             byte[] CoverImageBytes = null;

@@ -11,9 +11,10 @@ using System;
 namespace NineGag.Data.Migrations
 {
     [DbContext(typeof(NineGagDbContext))]
-    partial class NineGagDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180108114952_UpvotedOnColumnAdded")]
+    partial class UpvotedOnColumnAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

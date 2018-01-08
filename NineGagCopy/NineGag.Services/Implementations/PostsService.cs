@@ -34,6 +34,16 @@
             await this.db.SaveChangesAsync();
         }
 
+        public IEnumerable<Post> GetAllPostsByUserId(string userId)
+        {
+            var result = this.db.Posts
+                .Where(p => p.UserId == userId)
+                .Select(p => p)
+                .ToList();
+
+            return result;
+        }
+
         public async Task<Post> GetById(int id)
         {
                 var result = await this.db.Posts.FindAsync(id);
@@ -70,5 +80,10 @@
             return count > Fresh && count < Hot;
         }
 
+        public async Task UpdatePost(Post post)
+        {
+            this.db.Update(post);
+            await this.db.SaveChangesAsync();
+        }
     }
 }

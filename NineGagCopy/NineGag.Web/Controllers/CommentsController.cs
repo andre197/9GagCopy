@@ -95,6 +95,12 @@
             }
         }
 
+        [Route("upvote/{n:int}")]
+        public IActionResult UpvoteComment(int n)
+        {
+            return RedirectToAction("");
+        }
+
         private byte[] ConvertToBytes(IFormFile image)
         {
             byte[] CoverImageBytes = null;

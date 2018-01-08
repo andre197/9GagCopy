@@ -1,17 +1,12 @@
-﻿@model IEnumerable<NineGag.Infrastructure.ViewModels.PostViewModel>
+﻿@model NineGag.Infrastructure.ViewModels.Users.UserViewModel
+
 @{
-    ViewData["Title"] = "ListAllPosts";
+    ViewData["Title"] = "GetUser";
 }
-<style>
-    ul#menu li {
-        display: inline;
-    }
-</style>
-<h2>ListAllPosts</h2>
-<p>
-    <a href="posts/add">Create New</a>
-</p>
-@foreach (var post in Model)
+
+<h2>GetUser</h2>
+
+@foreach (var post in Model.Posts)
 {
     <article id="@post.Id">
         <header>
@@ -41,8 +36,9 @@
         </p>
         <div>
             <ul id="menu">
-                <li><a href="/posts/upvote/1?postId=@post.Id"><img src="~/images/buttonup.png" width="44" height="34" /></a></li>
-                <li><a href="/comments/add?postId=@post.Id"><img src="~/images/commentsimg.png" width="44" height="34" /></a></li>
+                <li><img src="~/images/buttonup.png" width="44" height="34" /></li>
+                <li><img src="~/images/buttondown.png" width="44" height="34" /></li>
+                <li><img src="~/images/commentsimg.png" width="44" height="34" /></li>
             </ul>
         </div>
 
