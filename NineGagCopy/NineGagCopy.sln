@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NineGag.Web", "NineGag.Web\NineGag.Web.csproj", "{798537CD-AB14-4925-AEB3-09284E3D30FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{75A08190-6BA1-4314-A7AC-CFA5E075BEB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NineGag.Data", "NineGag.Data\NineGag.Data.csproj", "{7CFF25FB-4135-4DC5-8A45-221D9504493E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{5A1B959D-15A5-44E9-A343-D392469991EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NineGag.Infrastructure", "NineGag.Infrastructure\NineGag.Infrastructure.csproj", "{BCAF5817-0D9F-4DC3-8213-0553EFB01469}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6114120E-2952-4C14-843F-84DC428E09DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic", "Logic", "{91473BED-EA53-4CB1-9B43-479B791872BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NineGag.Services", "NineGag.Services\NineGag.Services.csproj", "{E10B0598-9DD8-45C7-AB0B-9982056610DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NineGag.Logic", "NineGag.Logic\NineGag.Logic.csproj", "{71850181-45DF-4393-A42B-36763F51E768}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{798537CD-AB14-4925-AEB3-09284E3D30FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{798537CD-AB14-4925-AEB3-09284E3D30FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{798537CD-AB14-4925-AEB3-09284E3D30FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{798537CD-AB14-4925-AEB3-09284E3D30FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CFF25FB-4135-4DC5-8A45-221D9504493E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CFF25FB-4135-4DC5-8A45-221D9504493E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CFF25FB-4135-4DC5-8A45-221D9504493E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CFF25FB-4135-4DC5-8A45-221D9504493E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCAF5817-0D9F-4DC3-8213-0553EFB01469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCAF5817-0D9F-4DC3-8213-0553EFB01469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCAF5817-0D9F-4DC3-8213-0553EFB01469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCAF5817-0D9F-4DC3-8213-0553EFB01469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E10B0598-9DD8-45C7-AB0B-9982056610DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10B0598-9DD8-45C7-AB0B-9982056610DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E10B0598-9DD8-45C7-AB0B-9982056610DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E10B0598-9DD8-45C7-AB0B-9982056610DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71850181-45DF-4393-A42B-36763F51E768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71850181-45DF-4393-A42B-36763F51E768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71850181-45DF-4393-A42B-36763F51E768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71850181-45DF-4393-A42B-36763F51E768}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7CFF25FB-4135-4DC5-8A45-221D9504493E} = {75A08190-6BA1-4314-A7AC-CFA5E075BEB1}
+		{BCAF5817-0D9F-4DC3-8213-0553EFB01469} = {5A1B959D-15A5-44E9-A343-D392469991EC}
+		{E10B0598-9DD8-45C7-AB0B-9982056610DD} = {6114120E-2952-4C14-843F-84DC428E09DE}
+		{71850181-45DF-4393-A42B-36763F51E768} = {91473BED-EA53-4CB1-9B43-479B791872BD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13C42EE0-3AFE-42BB-8DB3-782C74C93285}
+	EndGlobalSection
+EndGlobal

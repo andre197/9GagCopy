@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NineGag.Data\NineGag.Data.csproj" />
+    <ProjectReference Include="..\NineGag.Infrastructure\NineGag.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<NineGag.Infrastructure.ViewModels.PostViewModel>
+@{
+    ViewData["Title"] = "ListAllPosts";
+}
+<style>
+    ul#menu li {
+        display: inline;
+    }
+</style>
+<h2>ListAllPosts</h2>
+<p>
+    <a href="posts/add">Create New</a>
+</p>
+@foreach (var post in Model)
+{
+    <article id="@post.Id">
+        <header>
+            <a href="@post.Id" method="post" target="_blank"><h1>@post.Title</h1></a>
+        </header>
+
+        @if (post.Picture != null)
+        {
+
+            var base64 = Convert.ToBase64String(post.Picture);
+            var imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+            <a href="@post.Id">
+                <img src="@imgsrc" />
+            </a>
+
+        }
+        else if (post.Url != null)
+        {
+            <a href="@post.Id/@post">
+                <img src="@post.Url" />
+            </a>
+        }
+
+        <p>
+            <a href="@post.Id/@post">@post.PostUpvotesCount upvotes</a> ·
+            <a href="@post.Id/@post#comments">@post.CommentsCount comments</a>
+        </p>
+        <div>
+            <ul id="menu">
+                <li><img src="~/images/buttonup.png" width="44" height="34" /></li>
+                <li><img src="~/images/buttondown.png" width="44" height="34" /></li>
+                <li><img src="~/images/commentsimg.png" width="44" height="34" /></li>
+            </ul>
+        </div>
+
+    </article>
+    <hr />
+}

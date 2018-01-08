@@ -1,0 +1,39 @@
+﻿#container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border: 1px solid black;
+}
+
+.box {
+    border: 1px solid red;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+
+.top {
+    top: 0
+}
+
+.middle {
+    top: 50%;
+    margin-top: -10px; /*half of the .box height*/
+}
+
+.bottom {
+    bottom: 0
+}
+
+.left {
+    left: 0;
+}
+
+.center {
+    left: 50%;
+    margin-left: -10px; /*half of the .box width*/
+}
+
+.right {
+    right: 0;
+}

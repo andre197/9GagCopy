@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NineGag.Infrastructure\NineGag.Infrastructure.csproj" />
+    <ProjectReference Include="..\NineGag.Services\NineGag.Services.csproj" />
+  </ItemGroup>
+
+</Project>
