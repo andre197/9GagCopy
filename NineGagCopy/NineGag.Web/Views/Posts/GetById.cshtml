@@ -1,4 +1,6 @@
 ﻿@model NineGag.Infrastructure.ViewModels.DetailedPostViewModel
+@using NineGag.Infrastructure.Extensions
+
 @{
     ViewData["Title"] = "GetById";
 }
@@ -38,34 +40,23 @@ else if (Model.Url != null)
 <div>
     <div>
         <div>
-            @if (Model.CurrentUserAvatar.Avatar != null)
+            @if (Model.CurrentUserAvatar != null && Model.CurrentUserAvatar.Avatar != null)
             {
                 var base64 = Convert.ToBase64String(Model.CurrentUserAvatar.Avatar);
                 var imgsrc = string.Format("data:image/gif;base64,{0}", base64);
                 <a href="users/@User.Identity.Name">
-                    <img src="@imgsrc" style="min-height: 50px; width: 50px;" />
+                    <img src="@imgsrc" style="height: 50px; width: 50px;" />
                 </a>
 
             }
             else
             {
-                <img src="~/images/nophoto.png" />
+                <img src="~/images/nophoto.png" style="height: 50px; width: 50px;" />
             }
         </div>
     </div>
     <div>
-        <div>
-            <div>
-                <textarea style="height: 50px; width: 580px;">                            
-                        </textarea>
-            </div>
-        </div>
-    </div>
-    <div>
-        <div>
-            <p><span>1000</span></p>
-            <a>Post</a>
-        </div>
+        <a href="/comments/add?postId=@Model.Id">Comment Something Cool?</a>
     </div>
 </div>
 
@@ -90,35 +81,37 @@ else if (Model.Url != null)
                 <a>Reply</a>
                 <a><img src="~/images/buttonup.png" width="20" height="20" /></a>
                 <a><img src="~/images/buttondown.png" width="20" height="20" /></a>
+                @{var visibility = (User.GetUserId() != item.UserId ? "block" : null); }
+                <a href="/comments/remove/@item.Id" style="display: @visibility">Delete Comment</a>
             </div>
         </div>
-        
 
-            <div class="container">
-                @foreach (var reply in item.Replies)
+
+        <div class="container">
+            @foreach (var reply in item.Replies)
                 {
-                    <div>
-                        @if (reply.User.Avatar != null)
+                <div>
+                    @if (reply.User.Avatar != null)
                     {
                         var base64 = Convert.ToBase64String(reply.User.Avatar);
                         var imgsrc = string.Format("data:image/gif;base64,{0}", base64);
-                            <a href="users/@item.UserId">
-                                <img src="@imgsrc" style="min-height: 30px; width: 30px;" />
-                            </a>
+                        <a href="users/@item.UserId">
+                            <img src="@imgsrc" style="min-height: 30px; width: 30px;" />
+                        </a>
 
-                        }
-                        <div>
-                            <p>@item.User.UserName @item.CommentUpvotes.Count points · @item.CommentedOn.ToShortDateString()</p>
-                        </div>
-                        <p>@item.Content</p>
-                        <div>
-                            <a>Reply</a>
-                            <a><img src="~/images/buttonup.png" width="20" height="20" /></a>
-                            <a><img src="~/images/buttondown.png" width="20" height="20" /></a>
-                        </div>
+                    }
+                    <div>
+                        <p>@item.User.UserName @item.CommentUpvotes.Count points · @item.CommentedOn.ToShortDateString()</p>
                     </div>
-                }
-            </div>
+                    <p>@item.Content</p>
+                    <div>
+                        <a>Reply</a>
+                        <a><img src="~/images/buttonup.png" width="20" height="20" /></a>
+                        <a><img src="~/images/buttondown.png" width="20" height="20" /></a>
+                    </div>
+                </div>
+            }
+        </div>
 
     }
 </div>

@@ -1,0 +1,56 @@
+﻿@model NineGag.Infrastructure.ViewModels.CommentViewModel
+
+@{
+    ViewData["Title"] = "RemoveComment";
+}
+
+<h2>RemoveComment</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CommentViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentedOn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CommentedOn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PostId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReplyId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ReplyId)
+        </dd>
+    </dl>
+    
+    <form action="/comments/remove/@Model.Id" method="delete">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

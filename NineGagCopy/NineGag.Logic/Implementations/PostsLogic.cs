@@ -12,12 +12,12 @@
     public class PostsLogic : IPostsLogic
     {
         private IPostsService postsService;
-        private IUsersLogic usersLogic;
+        private ICommentsLogic commentsLogic;
 
-        public PostsLogic(IPostsService postsService, IUsersLogic usersLogic)
+        public PostsLogic(IPostsService postsService, ICommentsLogic commentsLogic)
         {
             this.postsService = postsService;
-            this.usersLogic = usersLogic;
+            this.commentsLogic = commentsLogic;
         }
 
         public async Task AddPost(PostBindingModel post, string userId)
@@ -43,6 +43,8 @@
             }
 
             var mappedResult = Mapper.Map<Post, DetailedPostViewModel>(result);
+
+            mappedResult.Comments = this.commentsLogic.GetCommentsByPostId(mappedResult.Id);
 
             return mappedResult;
         }

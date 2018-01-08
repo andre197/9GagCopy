@@ -48,6 +48,8 @@
             services.AddScoped<IPostsService, PostsService>();
             services.AddScoped<IUsersLogic, UsersLogic>();
             services.AddScoped<IUsersService, UsersService>();
+            services.AddScoped<ICommentsLogic, CommentsLogic>();
+            services.AddScoped<ICommentsService, CommentsService>();
 
             services.AddMvc();
         }

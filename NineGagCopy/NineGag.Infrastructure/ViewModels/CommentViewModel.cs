@@ -10,10 +10,6 @@
 
         public string Content { get; set; }
 
-        public byte[] Picture { get; set; }
-
-        public string Url { get; set; }
-
         public DateTime CommentedOn { get; set; }
 
         public string UserId { get; set; }

@@ -23,6 +23,8 @@
                             src => src.Comments.Count));
 
                 cfg.CreateMap<PostBindingModel, Post>();
+                cfg.CreateMap<Comment, CommentViewModel>();
+                cfg.CreateMap<CommentBindingModel, Comment>();
             });
         }
     }

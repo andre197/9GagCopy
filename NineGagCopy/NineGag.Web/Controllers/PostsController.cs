@@ -36,7 +36,10 @@
                 return View("NotFound");
             }
 
-            result.CurrentUserAvatar = await this.usersLogic.GetUserAvatar(userId);
+            if (userId != null)
+            {
+                result.CurrentUserAvatar = await this.usersLogic.GetUserAvatar(userId);
+            }
 
             return View(result);
         }
@@ -106,14 +109,6 @@
             }
         }
 
-        private byte[] ConvertToBytes(IFormFile image)
-        {
-            byte[] CoverImageBytes = null;
-            BinaryReader reader = new BinaryReader(image.OpenReadStream());
-            CoverImageBytes = reader.ReadBytes((int)image.Length);
-            return CoverImageBytes;
-        }
-
         [Route("delete")]
         [HttpGet]
         [Authorize]
@@ -150,6 +145,14 @@
             }
 
             return RedirectToAction("GetAllPosts");
+        }
+
+        private byte[] ConvertToBytes(IFormFile image)
+        {
+            byte[] CoverImageBytes = null;
+            BinaryReader reader = new BinaryReader(image.OpenReadStream());
+            CoverImageBytes = reader.ReadBytes((int)image.Length);
+            return CoverImageBytes;
         }
     }
 }
